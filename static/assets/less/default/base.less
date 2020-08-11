@@ -31,6 +31,7 @@ p {
 
 .wrapper {
     background:@theme-color;
+    background: linear-gradient(180deg, @gradient-color1 0%, @gradient-color2 20%, @gradient-color3 100%);
     max-width: 960px;
     margin: 0 auto;
     position: relative;
@@ -38,7 +39,8 @@ p {
 }
 
 .sidebar-wrapper {
-    background: @theme-color;
+    background:@theme-color;
+    background: linear-gradient(180deg, @gradient-color1 0%, @gradient-color2 20%, @gradient-color3 100%);
     position: absolute;
     right: 0;
     width: 240px;
@@ -51,9 +53,11 @@ p {
     .profile-container {
         padding: 30px;
         //background: darken(@theme-color, 10%);
-        background: rgba(0, 0, 0, 0.2);
         text-align: center;
         color: #fff;
+        .img-circle {
+            width: 100%;
+        }
     }
     .name {
         font-size: 32px;
@@ -90,7 +94,10 @@ p {
         }
     }
     .container-block {
-        padding: 30px;
+        padding-top: 5px;
+        padding-right: 30px;
+        padding-bottom: 10px;
+        padding-left: 30px;
     }
     .container-block-title {
         text-transform: uppercase;
@@ -148,12 +155,18 @@ p {
             }
         }
     }
+
+    .small-hr {
+        width: 60%;
+        margin: 1rem 0 3rem 2rem;
+    }
 }
 
 .main-wrapper {
     background: #fff;
     padding: 60px;
     padding-right: 300px;
+    page-break-before: always;
     .section-title {
         text-transform: uppercase;
         font-size: 20px;
@@ -180,11 +193,12 @@ p {
     }
     .section {
         margin-bottom: 60px;
+        page-break-inside: avoid;
     }
     
     .experiences-section {
         .item {
-            margin-bottom: 30px;
+            margin-bottom: 0px;
         }
     }
     .upper-row {
@@ -224,6 +238,34 @@ p {
             margin-bottom: 15px;
         }
     }
+
+    .translations-container {
+        position: absolute;
+        color: @theme-color;
+        left: 10px;
+        top: 0px;
+        transition: all 0.5s;
+
+        .sidebarLeft & {
+            right: 5px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 6px 4px;
+            font-size: 12px;
+
+            &.currentLanguage {
+                font-weight: bold;
+                text-decoration-line: underline;
+            }
+        }
+
+        a:hover {
+            color: darken(@theme-color, 15%);
+            text-decoration: none;
+        }
+    }
     
 }
 
@@ -240,14 +282,15 @@ p {
     }
     .level-bar {
         height: 12px;
-        background: @smoky-white;
+        background: @smoky-white !important;
+        border-radius: 5px;
     }
     .level-bar-inner {
         height: 12px;
-        background: lighten(@theme-color, 15%);
+        background: lighten(@theme-color, 15%) !important;
+        border-radius: 5px;
     }
 }
-
 
 
 
@@ -264,4 +307,48 @@ p {
         color: @heart;
     }
     
+}
+.btn-translate {
+    background-color: @gradient-color1;
+    border-color: @theme-color;
+}
+.timeline-item {
+    padding: 1em 2em 2em;
+    position: relative;
+    color: rgba(0, 0, 0, 0.7);
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+
+    p {
+        font-size: 1rem;
+    }
+    &::before {
+        content: attr(date-is);
+        position: absolute;
+        right: 2em;
+        font-weight: bold;
+        top: 1em;
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: .785rem;
+    }
+    &::after {
+        width: 10px;
+        height: 10px;
+        display: block;
+        top: 1em;
+        position: absolute;
+        right: -7px;
+        border-radius: 10px;
+        content: '';
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        background: white;
+    }
+    &:last-child {
+        -webkit-border-image: -webkit-gradient(linear, right top, right bottom, color-stop(60%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0))) 1 100%;
+        -webkit-border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
+        -o-border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
+        border-image: -webkit-gradient(linear, right top, right bottom, color-stop(60%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0))) 1 100%;
+        border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
+    }
 }

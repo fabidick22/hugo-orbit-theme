@@ -1,10 +1,16 @@
 # Hugo Orbit Theme
+**This repository is a fork of [aerohub/hugo-orbit-theme](//github.com/xriley/Orbit-Theme), the purpose of this repository is to update the template with new features.**
+
 
 This is a Hugo port of [Orbit](//github.com/xriley/Orbit-Theme) - great looking resume/CV template designed for developers by Xiaoying Riley.
 
 ## Screenshot
 
-![Orbit screenshot](https://raw.githubusercontent.com/aerohub/hugo-orbit-theme/master/images/screenshot.png)
+![Orbit screenshot](https://raw.githubusercontent.com/fabidick22/hugo-orbit-theme/master/images/screenshot.png)
+
+## New Version
+
+![Orbit screenshot](https://raw.githubusercontent.com/fabidick22/hugo-orbit-theme/master/images/newVersion.png)
 
 ## Features
 
@@ -22,6 +28,11 @@ This is a Hugo port of [Orbit](//github.com/xriley/Orbit-Theme) - great looking 
 
 - Google Analytics
 - Print format improvements from [PR](//github.com/xriley/Orbit-Theme/pull/3)
+- Multi language support
+
+### TODO
+- Integration with Github repositories (repository card).
+- Generate PDF (jspdf + html2canvas)
 
 ## Demo
 
