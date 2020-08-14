@@ -3,9 +3,19 @@
                 <div class="intro">
                     <p>{{ with .Site.Params.projects.intro }}{{ . | markdownify }}{{ end }}</p>
                 </div><!--//intro-->
-				{{ range .Site.Params.projects.list }}
-                <div class="item">
-                    <span class="project-title"><a href="{{ .url }}">{{ .title }}</a></span> - <span class="project-tagline">{{ with .tagline }}{{ . | markdownify }}{{ end }}</span>
-                </div><!--//item-->
-				{{ end }}
+                <div class="column-group">
+                        {{ range .Site.Params.projects.list }}
+                            {{ with .gh_repository_url }}
+                                <div class="repo-card" data-repo="{{.}}"></div>
+                            {{ else }}
+                                <div class="item column">
+                                    <span class="project-title"><a href="{{ .url }}">{{ .title }}</a></span> - <span class="project-tagline">{{ with .tagline }}{{ . | markdownify }}{{ end }}</span>
+                                </div><!--//item-->
+                            {{ end }}
+
+
+
+                        {{ end }}
+                </div>
+
             </section><!--//section-->
