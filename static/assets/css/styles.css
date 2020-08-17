@@ -200,7 +200,7 @@ p {
   top: -2px;
 }
 .main-wrapper .section {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   page-break-inside: avoid;
 }
 .main-wrapper .experiences-section .item {
@@ -349,6 +349,13 @@ p {
 }
 .column {
   padding: 0 20px 20px;
+}
+.headline {
+  border-bottom-style: double;
+  border-bottom-color: #42A8C0;
+  width: 90%;
+  margin: -20px auto 25px auto;
+  padding-bottom: 3px;
 }
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
